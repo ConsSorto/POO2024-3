@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Info Contacto
+{% endblock %}
+{% block content %}
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+        </thead>
+        <tbody>
+    {% if contact %}
+        <tr>
+            <td>{{ contact }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.phone }}</td>
+        </tr>
+    {% endif %}
+        </tbody>
+    </table>
+{% endblock %}
+

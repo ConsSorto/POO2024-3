@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Editar Contacto
+{% endblock %}
+{% block content %}
+    <div class="card col-6">
+      <div class="card-header">
+        Edicion de un contacto
+      </div>
+      <div class="card-body">
+        <form action="{% url 'contactupdate' contact.id %}" method="POST">
+            {% csrf_token %}
+            <label class="form-label" for="name">Nombre</label>
+            <input class="form-control" id="name" name="name" type="text" value="{{ contact.name }}">
+            <label class="form-label" for="lastname">Apellido</label>
+            <input class="form-control" id="lastname" name="lastname" type="text" value="{{ contact.lastName }}">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" id="email" name="email" type="email" value="{{ contact.email }}">
+            <label class="form-label" for="phone">Telefono</label>
+            <input class="form-control" id="phone" name="phone" type="text" value="{{ contact.phone }}">
+            <button class="btn btn-success mt-3" type="submit">Actualizar</button>
+        </form>
+      </div>
+    </div>
+{% endblock %}
